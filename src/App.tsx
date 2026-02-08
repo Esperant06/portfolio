@@ -1,8 +1,11 @@
+import { Navbar } from "./layout/Navbar";
+
 function App() {
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className="min-h-screen overflow-x-hidden">
+      <Navbar />
+      <main></main>
+    </div>
   );
 }
 
