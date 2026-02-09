@@ -1,7 +1,7 @@
 import logo from "@/assets/logo.png";
 import Button from "../components/Button";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ButtonMenu from "../components/ButtonMenu";
 
 const NavLinks = [
     { href: "#about", label: "About" },
@@ -36,35 +36,11 @@ export const Navbar = () => {
 
                 {/* {Mobile Nav Bouton} */}
                 <div className="md:hidden">
-                    <button
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-transform duration-200"
-                        aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-                        aria-expanded={isMobileMenuOpen}
-                    >
-                        <div className="relative w-8 h-8 flex items-center justify-center">
-                            {/* Icône Menu (hamburger) */}
-                            <Menu
-                                size={24}
-                                className={`absolute transition-all duration-300 ease-in-out ${isMobileMenuOpen
-                                        ? "opacity-0 scale-75 rotate-90"
-                                        : "opacity-100 scale-100 rotate-0"
-                                    }`}
-                            />
-
-                            {/* Icône X (croix) */}
-                            <X
-                                size={24}
-                                className={`absolute transition-all duration-300 ease-in-out ${isMobileMenuOpen
-                                        ? "opacity-100 scale-100 rotate-0"
-                                        : "opacity-0 scale-75 -rotate-90"
-                                    }`}
-                            />
-                        </div>
-                    </button>
+                    <ButtonMenu isOpen={isMobileMenuOpen} onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    />
                 </div>
             </nav>
-            
+
             {/* {Mobile Nav} */}
             {isMobileMenuOpen && (
                 <div className="md:hidden glass-strong">
