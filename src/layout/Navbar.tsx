@@ -43,7 +43,7 @@ export const Navbar = () => {
 
             {/* {Mobile Nav} */}
             {isMobileMenuOpen && (
-                <div className="md:hidden glass-strong">
+                <div className="md:hidden glass-strong animate-fade-in">
                     <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
                         {NavLinks.map((link, index) => (
                             <a
