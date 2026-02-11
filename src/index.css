@@ -68,6 +68,6 @@
     }
   }
   .animate-fade-in{
-    animation: fade-in 300ms;
+    animation: fade-in 200ms ease-out both;
   }
 }
