@@ -1,4 +1,8 @@
 import herobg from "@/assets/herobg.jpg";
+import Button from "../components/Button";
+import { ArrowRight } from "lucide-react";
+import AnimatedBorderButton from "../components/AnimatedBorderButton";
+
 export const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -42,14 +46,20 @@ export const Hero = () => {
                         </div>
 
                         <div className="space-y-4">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-400">
                                 Crafting <span className="text-primary glow-text">digital </span>
                                 <br />experiences with <br />
                                 <span className="font-serif italic font-normal text-white">precision.</span>
                             </h1>
-                            <p className="text-muted-foreground text-lg max-w-lg animate-fade-in">
+                            <p className="text-muted-foreground text-lg max-w-lg animate-fade-in animate-delay-600">
                                 I build responsive, accessible, and performant web applications using modern technologies.
                             </p>
+                        </div>
+
+                        {/* Call to Action Buttons} */}
+                        <div>
+                            <Button size="md" className="btn btn-primary px-5 py-5 animate-fade-in animate-delay-800">Contact Me <ArrowRight size={16}/></Button>
+                            <AnimatedBorderButton size="md" children="Download CV" className="ml-5" />
                         </div>
                     </div>
                     {/* Right Column - image profil} */}
