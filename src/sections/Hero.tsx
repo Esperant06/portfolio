@@ -2,6 +2,8 @@ import herobg from "@/assets/herobg.jpg";
 import Button from "../components/Button";
 import { ArrowRight } from "lucide-react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
+import SocialIcons from "../components/SocialIcon";
+import logo from "@/assets/logo.png";
 
 export const Hero = () => {
     return (
@@ -35,7 +37,7 @@ export const Hero = () => {
             </div>
 
             {/* Contenu principal */}
-            <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+            <div className="container mx-auto px-6 pt-25 pb-20 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Column - Text content} */}
                     <div className="space-y-8">
@@ -46,7 +48,7 @@ export const Hero = () => {
                         </div>
 
                         <div className="space-y-4">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-400">
+                            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-400">
                                 Crafting <span className="text-primary glow-text">digital </span>
                                 <br />experiences with <br />
                                 <span className="font-serif italic font-normal text-white">precision.</span>
@@ -57,12 +59,42 @@ export const Hero = () => {
                         </div>
 
                         {/* Call to Action Buttons} */}
-                        <div>
-                            <Button size="md" className="btn btn-primary px-5 py-5 animate-fade-in animate-delay-800">Contact Me <ArrowRight size={16}/></Button>
-                            <AnimatedBorderButton size="md" children="Download CV" className="ml-5" />
+                        <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-800">
+                            <Button size="md" className="btn btn-primary px-5 py-5">Contact Me <ArrowRight size={16} /></Button>
+                            <AnimatedBorderButton size="md" children="Download CV" />
+                        </div>
+
+                        {/* Social Media Links} */}
+                        <div className="flex items-center gap-4 mt-6 animate-fade-in animate-delay-1000">
+                            <span className="text-sm text-muted-foreground">Follow me: </span>
+                            <SocialIcons />
                         </div>
                     </div>
+
                     {/* Right Column - image profil} */}
+                    <div className="relative animate-fade-in animate-delay-400">
+                        {/* Image de profil ou illustration */}
+                        <div className="relative max-w-md mx-auto">
+                            {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse z-10"></div> */}
+                            <div className="relative glass-navbar rounded-3xl p-2 glow-border z-20">
+                                <img src={logo} alt="Logo" className="w-full aspect-auto object-cover rounded-2xl" />
+                                {/* Floating badge */}
+                                <div className="absolute -bottom-4 -right-4 glass-navbar rounded-xl px-4 py-3 animation-float">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                        <span className="text-sm font-medium">Available for work</span>
+                                    </div>
+                                </div>
+                                {/* Stats Badge */}
+                                <div className="absolute -top-4 -left-4 glass-navbar rounded-xl px-4 py-3">
+                                    <div className="flex flex-col items-center">
+                                        <div className="text-lg font-bold">1+</div>
+                                        <div className="text-xs text-muted-foreground">Years Exp.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
