@@ -61,12 +61,13 @@ export const Navbar = () => {
                             <a
                                 key={index}
                                 href={link.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300 px-4 py-2"
                             >
                                 {link.label}
                             </a>
                         ))}
-                        <Button onClick={() => window.location.href = "#contact"} size="md" children="Contact Me" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                        <Button onClick={() => { window.location.href = "#contact"; setIsMobileMenuOpen(false); }} size="md" children="Contact Me" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
                     </div>
                 </div>
             )}
