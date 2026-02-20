@@ -14,7 +14,7 @@ export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () =>{
+        const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         }
 
@@ -24,7 +24,7 @@ export const Navbar = () => {
     })
 
     return (
-        <header className={`fixed top-0 left-0 right-0 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "glass-strong py-3 backdrop-blur-md shadow-sm" : "bg-transparent py-5 backdrop-blur-none shadow-none"}`}>
             <nav className="container mx-auto px-6 flex items-center justify-between h-16">
                 <a href="#">
                     <img src={logo} alt="Logo" className="h-10 mr-4" />
