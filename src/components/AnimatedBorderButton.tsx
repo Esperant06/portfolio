@@ -1,5 +1,3 @@
-import { Download } from "lucide-react";
-
 type ButtonSize = 'sm' | 'md' | 'lg' | 'default';
 
 interface ButtonProps {
@@ -41,7 +39,7 @@ const AnimatedBorderButton: React.FC<ButtonProps> = ({ children, className, size
         />
       </svg>
       <span className="relative z-10 flex items-center justify-center gap-2">
-        {children} <Download size={16}/>
+        {children}
       </span>
     </button>
   );
