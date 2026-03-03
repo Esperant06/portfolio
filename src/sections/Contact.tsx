@@ -1,3 +1,6 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import Button from "../components/Button";
 import {
   Mail,
   Phone,
@@ -6,28 +9,25 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
-import Button from "../components/Button";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "pedro@example.com",
-    href: "mailto:pedro@example.com",
+    value: "d.esperant6@gmail.com",
+    href: "mailto:d.esperant6@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+261 34 55 732 05",
+    href: "tel:+261345573205",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
-    href: "#",
+    value: "Antsirabe, Madagascar",
+    href: "https://maps.app.goo.gl/FxbSC6gwPqydiJe98",
   },
 ];
 
@@ -38,25 +38,27 @@ export const Contact = () => {
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({
-    type: null, // 'success' or 'error'
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({
+    type: null,
     message: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
+
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error(
-          "EmailJS configuration is missing. Please check your environment variables."
-        );
+        throw new Error("Configuration EmailJS manquante.");
       }
 
       await emailjs.send(
@@ -67,20 +69,22 @@ export const Contact = () => {
           email: formData.email,
           message: formData.message,
         },
-        publicKey
+        publicKey,
       );
 
       setSubmitStatus({
         type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+        message: "Message envoyé avec succès ! Je reviens vers toi rapidement.",
       });
       setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
-      console.error("EmailJS error:", error);
+
+      // Optionnel : effacer le message après 6 secondes
+      setTimeout(() => setSubmitStatus({ type: null, message: "" }), 6000);
+    } catch (err: any) {
+      console.error("Erreur EmailJS :", err);
       setSubmitStatus({
         type: "error",
-        message:
-          error.text || "Failed to send message. Please try again later.",
+        message: err?.text || "Échec de l'envoi. Réessaie plus tard.",
       });
     } finally {
       setIsLoading(false);
@@ -119,13 +123,14 @@ export const Contact = () => {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  Name
+                  Nom
                 </label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   required
-                  placeholder="Your name..."
+                  placeholder="Ton nom..."
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -137,14 +142,16 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  name="email"
+                  type="email"
                   required
-                  placeholder="your@email.com"
+                  placeholder="ton@email.com"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -161,46 +168,47 @@ export const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  id="message"
+                  name="message"
                   rows={5}
                   required
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  placeholder="Your message..."
+                  placeholder="Ton message..."
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 />
               </div>
 
               <Button
-                className="w-full"
                 type="submit"
-                size="lg"
+                className="w-full btn btn-primary py-5"
+                size="md"
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <>Sending...</>
+                  <>Envoi en cours...</>
                 ) : (
                   <>
-                    Send Message
-                    <Send className="w-5 h-5" />
+                    Envoyer
+                    <Send size={16} />
                   </>
                 )}
               </Button>
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3
-                     p-4 rounded-xl ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
+                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-400"
+                  }`}
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <AlertCircle className="w-5 h-5 shrink-0" />
                   )}
                   <p className="text-sm">{submitStatus.message}</p>
                 </div>
