@@ -9,6 +9,8 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 const contactInfo = [
   {
@@ -32,6 +34,7 @@ const contactInfo = [
 ];
 
 export const Contact = () => {
+  const now = new Date();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -68,6 +71,7 @@ export const Contact = () => {
           name: formData.name,
           email: formData.email,
           message: formData.message,
+          date: format(now, "EEEE d MMMM yyyy 'à' HH:mm", { locale: fr }),
         },
         publicKey,
       );
