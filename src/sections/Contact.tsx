@@ -21,13 +21,13 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    label: "Phone",
+    label: "Téléphone",
     value: "+261 34 55 732 05",
     href: "tel:+261345573205",
   },
   {
     icon: MapPin,
-    label: "Location",
+    label: "Localisation",
     value: "Antsirabe, Madagascar",
     href: "https://maps.app.goo.gl/FxbSC6gwPqydiJe98",
   },
@@ -105,17 +105,17 @@ export const Contact = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Get In Touch
+            Contactez-Moi
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100 text-secondary-foreground">
-            Let's build{" "}
+            Construisons ensemble{" "}
             <span className="font-serif italic font-normal text-white">
-              something great.
+              quelque chose de fantastique.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together.
+            Vous avez un projet en tête? J'aimerais bien l'entendre. Envoyez-moi un message
+            et discutons comment nous pouvons travailler ensemble.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export const Contact = () => {
           <div className="space-y-6 animate-fade-in animate-delay-400">
             <div className="glass-navbar rounded-3xl p-8">
               <h3 className="text-xl font-semibold mb-6">
-                Contact Information
+                Informations de contact
               </h3>
               <div className="space-y-4">
                 {contactInfo.map((item, i) => (
@@ -251,12 +251,12 @@ export const Contact = () => {
             <div className="glass-navbar rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">Currently Available</span>
+                <span className="font-medium">Actuellement Disponible</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance consultant,
-                let's talk!
+                Je suis ouvert à de nouveaux projets et opportunités de collaboration. 
+                Que ce soit pour du développement web, mobile ou de la formation, 
+                n'hésitez pas à me contacter pour discuter de vos besoins!
               </p>
             </div>
           </div>

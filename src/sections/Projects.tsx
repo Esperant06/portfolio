@@ -3,42 +3,42 @@ import AnimatedBorderButton from "../components/AnimatedBorderButton";
 
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "Application de Gestion de Trésorerie",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
+      "Application web interne pour la Trésorerie Générale d'Antsirabe. Remplace 15 feuilles Excel et documents papier pour la gestion des opérations. Gain de temps estimé de 40% pour l'équipe.",
     image:
       "https://img.freepik.com/premium-photo/realtime-data-visualization-business-environment-financial-decisionmaking_145776-94462.jpg",
-    tags: ["React", "Typescript", "NodeJS"],
+    tags: ["Laravel", "MySQL", "PHP", "Bootstrap"],
     link: "#",
     github: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Site Simplifia - OpenData Madagascar",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
+      "Site WordPress pour OpenData Madagascar. Intégration de 8 nouvelles fonctionnalités, optimisation SEO complète et maintenance mensuelle. Gestion de contenu avancée et mise en page personnalisée.",
     image:
       "https://tse2.mm.bing.net/th/id/OIP.L57oSorqSAvOA7UalTBQfgHaEr?rs=1&pid=ImgDetMain&o=7&rm=3",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+    tags: ["WordPress", "SEO", "HTML/CSS", "PHP"],
     link: "#",
     github: "#",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Plateforme de Formation Web",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
+      "Développement de contenu pédagogique et supports de formation pour Tia-Tech. Plateforme interactive pour l'enseignement de HTML, CSS, JavaScript, Bootstrap et ReactJS à plus de 50 apprenants.",
     image:
       "https://img.freepik.com/premium-photo/ai-writing-assistant-creative-writing-tool_145776-94463.jpg",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "ReactJS"],
     link: "#",
     github: "#",
   },
   {
-    title: "Project Management Tool",
+    title: "Application Mobile Flutter",
     description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
+      "Application mobile multiplateforme développée avec Flutter et Dart. Interface utilisateur intuitive avec gestion d'état optimisée et intégration API backend personnalisée.",
     image:
       "https://img.freepik.com/premium-photo/team-collaboration-project-management-tool_145776-94464.jpg",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
+    tags: ["Flutter", "Dart", "Firebase", "REST API"],
     link: "#",
     github: "#",
   },
@@ -54,18 +54,18 @@ export const Projects = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Featured Work
+            Travaux Récents
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100 text-secondary-foreground">
-            Projects that
+            Projets qui
             <span className="font-serif italic font-normal text-white">
               {" "}
-              make an impact.
+              ont de l'impact.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animate-delay-200">
-            A selection of my recent work, from complex web applications to
-            innovative tools that solve real-world problems.
+            Une sélection de mes travaux récents, depuis les applications web complexes
+            jusqu'aux outils innovants qui résolvent des problèmes réels.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export const Projects = () => {
         {/* View All CTA */}
         <div className="text-center mt-12 animate-fade-in animate-delay-500">
           <AnimatedBorderButton size="md">
-            View All Projects
+            Voir Tous les Projets
             <ArrowUpRight size={16} />
           </AnimatedBorderButton>
         </div>

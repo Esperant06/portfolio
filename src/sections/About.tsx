@@ -3,26 +3,26 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
+    title: "Code Propre",
     description:
-      "Writing maintainable, scalable code that stands the test of time.",
+      "Ecrire du code maintenable et scalable qui résiste à l'épreuve du temps.",
   },
   {
     icon: Rocket,
     title: "Performance",
     description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
+      "Optimiser pour la vitesse et livrer des expériences utilisateur ultra-rapides.",
   },
   {
     icon: Users,
     title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
+    description: "Travailler à proximité avec les équipes pour concriser les idées.",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
     description:
-      "Staying ahead with the latest technologies and best practices.",
+      "Rester en avance avec les dernières technologies et les meilleures pratiques.",
   },
 ];
 
@@ -34,43 +34,33 @@ export const About = () => {
           {/* {Left column} */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wide uppercase">About Me</span>
+              <span className="text-secondary-foreground text-sm font-medium tracking-wide uppercase">À Propos</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animate-delay-200 text-secondary-foreground">
-              Bulding the future,
+              Développeur passionné,
               <span className="font-serif italic font-normal text-white">
                 {" "}
-                one line of code at a time.
+                formateur engagé.
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                Diplômé d'un Master en Génie Logiciel, j'ai commencé ma carrière en formant plus de 50 apprenants aux technologies web modernes. Depuis, j'ai eu l'opportunité de travailler sur des projets variés : de la gestion de projets digitaux à la développement d'applications internes complexes.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                Actuellement stagiaire à la Trésorerie Générale d'Antsirabe, je développe une application web (Laravel + MySQL) qui remplace 15 feuilles Excel et documents papier, offrant un gain de temps de 40% pour l'équipe. Je maîtrises PHP, JavaScript, Dart et des frameworks comme Laravel, ReactJS et Flutter.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                Ma passion réside dans la création de solutions techniques robustes et dans le partage de mon savoir avec la communauté. En dehors du code, vous me trouverez en trail ou en train de jouer aux jeux vidéo.
               </p>
             </div>
 
             <div className="glass-navbar rounded-2xl p-6 glow-text animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                "Mon objectif est de créer des solutions technologiques qui simplifient la vie des gens
+                et d'inspirer la prochaine génération de développeurs à atteindre leurs rves."
               </p>
             </div>
           </div>

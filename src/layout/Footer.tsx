@@ -2,9 +2,9 @@ import logo from "@/assets/logo.png";
 import SocialIcons from "../components/SocialIcon";
 
 const footerLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
+  { href: "#about", label: "À Propos" },
+  { href: "#projects", label: "Projets" },
+  { href: "#experience", label: "Expérience" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -21,7 +21,7 @@ export const Footer = () => {
               <img src={logo} alt="Logo" className="h-10 mr-4" />
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Danos Espérant. All rights reserved.
+              © {currentYear} Danos Espérant. Tous droits réservés.
             </p>
           </div>
 

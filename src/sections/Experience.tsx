@@ -1,38 +1,29 @@
 const experiences = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend Engineer",
-    company: "Tech Innovators Inc.",
+    period: "Janvier 2025 — Aujourd'hui",
+    role: "Stagiaire en Développement Logiciel",
+    company: "Trésorerie Générale d'Antsirabe",
     description:
-      "Leading frontend architecture for a suite of fintech products. Implemented micro-frontend architecture, reduced bundle size by 40%, and mentored a team of 5 developers.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+      "Développement d'une application web interne (Laravel + MySQL) qui remplace l'utilisation de 15 feuilles Excel et documents papier pour la gestion des opérations de trésorerie. Gain de temps estimé de 40% pour l'équipe.",
+    technologies: ["Laravel", "MySQL", "PHP", "Bootstrap"],
     current: true,
   },
   {
+    period: "Janvier 2024 — Décembre 2024",
+    role: "Digital Project Manager",
+    company: "OpenData Madagascar",
+    description:
+      "Création et maintenance du site WordPress pour le compte de Simplifia. Intégration de 8 nouvelles fonctionnalités, optimisation SEO et mises à jour mensuelles du site.",
+    technologies: ["WordPress", "SEO", "HTML/CSS", "PHP"],
+    current: false,
+  },
+  {
     period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Digital Solutions Co.",
+    role: "Formateur en Développement d'Application Web",
+    company: "Association Tia-Tech",
     description:
-      "Built and maintained multiple React applications for enterprise clients. Introduced automated testing practices that improved code coverage to 85%.",
-    technologies: ["React", "Redux", "Jest", "Cypress"],
-    current: false,
-  },
-  {
-    period: "2019 — 2020",
-    role: "Junior Developer",
-    company: "StartUp Labs",
-    description:
-      "Contributed to the development of a SaaS platform from MVP to production. Collaborated with designers to implement pixel-perfect UI components.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
-    current: false,
-  },
-  {
-    period: "2018 — 2019",
-    role: "Freelance Developer",
-    company: "Self-Employed",
-    description:
-      "Delivered custom web solutions for small businesses and startups. Built 15+ websites and applications, handling everything from design to deployment.",
-    technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
+      "Animation de sessions de formation (théorie + pratique) pour plus de 50 apprenants sur HTML, CSS, JavaScript, Bootstrap et frameworks modernes. Développement de supports pédagogiques et suivi personnalisé.",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "ReactJS"],
     current: false,
   },
 ];
@@ -46,19 +37,18 @@ export const Experience = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Career Journey
+            Parcours Professionnel
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Experience that{" "}
+            L'expérience qui{" "}
             <span className="font-serif italic font-normal text-white">
               {" "}
-              speaks volumes.
+              en dit long.
             </span>
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A timeline of my professional growth, from curious beginner to
-            senior engineer leading teams and building products at scale.
+            Un parcours riche marqué par la formation, les projet divers et l'engagement en tant que développeur et formateur.
           </p>
         </div>
 

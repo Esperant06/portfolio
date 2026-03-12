@@ -4,33 +4,33 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Jean's work on our project was exceptional. His attention to detail and commitment to quality resulted in a product that exceeded our expectations.",
-    author: "Sarah Chen",
-    role: "CTO, Tech Innovators Inc.",
+      "Danos a su transformer notre processus de trésorerie grâce à son application innovante. Un professionnel rigoureux et à l'écoute des besoins de l'équipe.",
+    author: "Chef de Trésorerie",
+    role: "Trésorerie Générale d'Antsirabe",
     avatar:
       "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "Working with Pedro was a game-changer for our project. He delivered ahead of schedule with code quality that set a new standard for our team.",
-    author: "Michael Rodriguez",
-    role: "Product Manager, Digital Solutions",
+      "En tant que formateur, Danos a su inspirer nos apprenants et rendre les concepts techniques accessibles. Sa passion pour le partage de connaissance est exemplaire.",
+    author: "Coordinateur Pédagogique",
+    role: "Association Tia-Tech",
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "Pedro's expertise in software architecture and his proactive approach to problem-solving made a significant impact on our product's success. He's a true asset to any team.",
-    author: "Emily Watson",
-    role: "Engineering Lead, StartUp Labs",
+      "Danos a livré un projet WordPress de haute qualité avec une optimisation SEO impressionnante. Son professionnalisme et sa réactivité sont remarquables.",
+    author: "Directeur de Projet",
+    role: "OpenData Madagascar",
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "Not only is Pedro technically brilliant, but he's also a fantastic communicator and team player. He elevated everyone around him.",
-    author: "David Kim",
-    role: "CEO, Innovation Hub",
+      "Développeur compétent et formateur engagé, Danos combine excellence technique et capacité à transmettre son savoir. Un atout précieux pour toute équipe.",
+    author: "Collègue Développeur",
+    role: "Communauté Tech Madagascar",
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
@@ -55,12 +55,12 @@ export const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            What People Say
+            Ce que les gens disent
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100 text-secondary-foreground">
-            Kind words from{" "}
+            Des mots gentils de{" "}
             <span className="font-serif italic font-normal text-white">
-              amazing people.
+              personnes formidables.
             </span>
           </h2>
         </div>

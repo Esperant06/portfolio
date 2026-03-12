@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import ButtonMenu from "../components/ButtonMenu";
 
 const NavLinks = [
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#about", label: "À Propos" },
+    { href: "#projects", label: "Projets" },
+    { href: "#experience", label: "Expérience" },
+    { href: "#testimonials", label: "Témoignages" },
 ]
 export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,7 +43,7 @@ export const Navbar = () => {
 
                 {/* {CTA Button} */}
                 <div className="hidden md:block">
-                    <Button onClick={() => window.location.href = "#contact"} size="md" children="Contact Me" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                    <Button onClick={() => window.location.href = "#contact"} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
                 </div>
 
                 {/* {Mobile Nav Bouton} */}
@@ -67,7 +67,7 @@ export const Navbar = () => {
                                 {link.label}
                             </a>
                         ))}
-                        <Button onClick={() => { window.location.href = "#contact"; setIsMobileMenuOpen(false); }} size="md" children="Contact Me" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                        <Button onClick={() => { window.location.href = "#contact"; setIsMobileMenuOpen(false); }} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
                     </div>
                 </div>
             )}

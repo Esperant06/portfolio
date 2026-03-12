@@ -6,24 +6,20 @@ import SocialIcons from "../components/SocialIcon";
 import logo from "@/assets/logo.png";
 
 const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "GraphQL",
+  "PHP",
+  "JavaScript",
+  "Dart",
+  "Laravel",
+  "CodeIgniter",
+  "ReactJS",
+  "Flutter",
+  "MySQL",
   "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Docker",
-  "AWS",
-  "Vercel",
-  "Tailwind CSS",
-  "Prisma",
-  "Jest",
-  "Cypress",
-  "Figma",
+  "WordPress",
+  "Bootstrap",
+  "HTML/CSS",
   "Git",
-  "GitHub Actions",
+  "Maintenance IT",
 ];
 
 export const Hero = () => {
@@ -65,33 +61,33 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-navbar text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>{" "}
-                Software Engineer - Dev Specialist
+                Développeur Logiciel & Formateur
               </span>
             </div>
 
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-400">
-                Crafting{" "}
-                <span className="text-primary glow-text">digital </span>
+                Construire des solutions{" "}
+                <span className="text-primary glow-text">technologiques </span>
                 <br />
-                experiences with <br />
+                qui changent la<br />
                 <span className="font-serif italic font-normal text-white">
-                  precision.
+                  pratique.
                 </span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-lg animate-fade-in animate-delay-600">
-                I build responsive, accessible, and performant web applications
-                using modern technologies.
+                Je développe des applications web et mobiles robustes, tout en partageant mon expertise
+                avec les prochaines générations de développeurs.
               </p>
             </div>
 
             {/* Call to Action Buttons} */}
             <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-800">
               <Button size="md" className="btn btn-primary px-5 py-5">
-                Contact Me <ArrowRight size={16} />
+                Me Contacter <ArrowRight size={16} />
               </Button>
               <AnimatedBorderButton size="md">
-                Download CV
+                Télécharger CV
                 <Download size={16} />
               </AnimatedBorderButton>
             </div>
