@@ -5,7 +5,7 @@ const testimonials = [
   {
     quote:
       "Danos a su transformer notre processus de trésorerie grâce à son application innovante. Un professionnel rigoureux et à l'écoute des besoins de l'équipe.",
-    author: "Chef de Trésorerie",
+    author: "Chef de Service Trésorerie",
     role: "Trésorerie Générale d'Antsirabe",
     avatar:
       "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop",

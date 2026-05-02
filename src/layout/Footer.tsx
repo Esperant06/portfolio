@@ -1,5 +1,5 @@
-import logo from "@/assets/logo.png";
 import SocialIcons from "../components/SocialIcon";
+import { Logo } from "../components/Logo";
 
 const footerLinks = [
   { href: "#about", label: "À Propos" },
@@ -17,8 +17,8 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
-              <img src={logo} alt="Logo" className="h-10 mr-4" />
+            <a href="/" className="inline-flex items-center">
+              <Logo />
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Danos Espérant. Tous droits réservés.

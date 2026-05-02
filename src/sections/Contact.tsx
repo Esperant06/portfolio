@@ -254,9 +254,9 @@ export const Contact = () => {
                 <span className="font-medium">Actuellement Disponible</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                Je suis ouvert à de nouveaux projets et opportunités de collaboration. 
-                Que ce soit pour du développement web, mobile ou de la formation, 
-                n'hésitez pas à me contacter pour discuter de vos besoins!
+                Je suis ouvert à des nouveaux projets et opportunités de collaboration. 
+                Que ce soit pour du développement web, mobile.
+                N'hésitez pas à me contacter pour discuter de vos besoins!
               </p>
             </div>
           </div>

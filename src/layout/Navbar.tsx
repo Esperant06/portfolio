@@ -1,17 +1,21 @@
-import logo from "@/assets/logo.png";
 import Button from "../components/Button";
 import { useEffect, useState } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import ButtonMenu from "../components/ButtonMenu";
+import { Logo } from "../components/Logo";
 
 const NavLinks = [
     { href: "#about", label: "À Propos" },
     { href: "#projects", label: "Projets" },
     { href: "#experience", label: "Expérience" },
-    { href: "#testimonials", label: "Témoignages" },
+    // { href: "#testimonials", label: "Témoignages" },
 ]
+
 export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,27 +27,45 @@ export const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     })
 
+    const handleNavClick = (hash: string) => {
+        // Si on est sur /all-projects, naviguer vers l'accueil avec le hash
+        if (location.pathname !== "/" && location.pathname !== "/portfolio") {
+            navigate(`/${hash}`);
+        } else {
+            // Si on est déjà sur l'accueil, naviger vers le hash (ça triggerera le useScrollToHash)
+            navigate(hash);
+        }
+    };
+
+    const handleContactClick = () => {
+        handleNavClick("#contact");
+    };
+
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "glass-strong py-3 backdrop-blur-md shadow-sm" : "bg-transparent py-5 backdrop-blur-none shadow-none"}`}>
             <nav className="container mx-auto px-6 flex items-center justify-between h-16">
-                <a href="#">
-                    <img src={logo} alt="Logo" className="h-10 mr-4" />
-                </a>
+                <Link to="/" className="flex items-center">
+                    <Logo className="h-10 cursor-pointer" />
+                </Link>
 
                 {/* {DeskTop Nav} */}
                 <div className="hidden md:flex items-center gap-1">
                     <div className="glass-navbar rounded-full px-2 py-1 flex items-center gap-1">
                         {NavLinks.map((link, index) => (
-                            <a key={index} href={link.href} className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300">
+                            <button
+                                key={index}
+                                onClick={() => handleNavClick(link.href)}
+                                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300 cursor-pointer bg-transparent border-none"
+                            >
                                 {link.label}
-                            </a>
+                            </button>
                         ))}
                     </div>
                 </div>
 
                 {/* {CTA Button} */}
                 <div className="hidden md:block">
-                    <Button onClick={() => window.location.href = "#contact"} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                    <Button onClick={handleContactClick} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
                 </div>
 
                 {/* {Mobile Nav Bouton} */}
@@ -58,16 +80,18 @@ export const Navbar = () => {
                 <div className="md:hidden glass-strong animate-fade-in">
                     <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
                         {NavLinks.map((link, index) => (
-                            <a
+                            <button
                                 key={index}
-                                href={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300 px-4 py-2"
+                                onClick={() => {
+                                    handleNavClick(link.href);
+                                    setIsMobileMenuOpen(false);
+                                }}
+                                className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300 px-4 py-2 text-left bg-transparent border-none cursor-pointer"
                             >
                                 {link.label}
-                            </a>
+                            </button>
                         ))}
-                        <Button onClick={() => { window.location.href = "#contact"; setIsMobileMenuOpen(false); }} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                        <Button onClick={() => { handleContactClick(); setIsMobileMenuOpen(false); }} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
                     </div>
                 </div>
             )}

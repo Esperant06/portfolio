@@ -3,7 +3,10 @@ import Button from "../components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
 import SocialIcons from "../components/SocialIcon";
-import logo from "@/assets/logo.png";
+import espa from "@/assets/espa.png";
+import { useState } from "react";
+import { Toast } from "../components/Toast";
+import { Loader } from "../components/Loader";
 
 const skills = [
   "PHP",
@@ -22,7 +25,46 @@ const skills = [
   "Maintenance IT",
 ];
 
+// Générer les données aléatoires en dehors du composant (une seule fois)
+const generateRandomDots = () => {
+  return [...Array(30)].map(() => ({
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    duration: 15 + Math.random() * 20,
+    delay: Math.random() * 5,
+  }));
+};
+
 export const Hero = () => {
+  const [randomDots] = useState(() => generateRandomDots());
+  const [isLoading, setIsLoading] = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+
+  const handleDownloadCV = async () => {
+    try {
+      setIsLoading(true);
+
+      // Simuler un délai de téléchargement (pour voir le loader)
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      // Créer un lien temporaire et déclencher le téléchargement
+      const link = document.createElement("a");
+      link.href = "/portfolio/cv.pdf";
+      link.download = "Danos-CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Afficher le toast de succès
+      setToast({ message: "CV téléchargé ✓", type: "success" });
+    } catch (error) {
+      console.error("Erreur lors du téléchargement:", error);
+      setToast({ message: "Erreur lors du téléchargement", type: "error" });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image + Overlay */}
@@ -33,21 +75,21 @@ export const Hero = () => {
           className="w-full h-full object-cover opacity-30"
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
       </div>
 
       {/* Conteneur pour les points (position relative important !) */}
       <div className="absolute inset-0 z-10 pointer-events-none">
-        {[...Array(30)].map((_, index) => (
+        {randomDots.map((dot, index) => (
           <div
             key={index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "var(--color-primary)",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: `${dot.left}%`,
+              top: `${dot.top}%`,
+              animation: `slow-drift ${dot.duration}s ease-in-out infinite`,
+              animationDelay: `${dot.delay}s`,
             }}
           />
         ))}
@@ -61,7 +103,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-navbar text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>{" "}
-                Développeur Logiciel & Formateur
+                Développeur Logiciel
               </span>
             </div>
 
@@ -86,10 +128,16 @@ export const Hero = () => {
               <Button size="md" className="btn btn-primary px-5 py-5">
                 Me Contacter <ArrowRight size={16} />
               </Button>
-              <AnimatedBorderButton size="md">
-                Télécharger CV
-                <Download size={16} />
-              </AnimatedBorderButton>
+              <button
+                onClick={handleDownloadCV}
+                disabled={isLoading}
+                className="disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+              >
+                <AnimatedBorderButton size="md" className={isLoading ? "opacity-50" : ""}>
+                  {isLoading ? "Téléchargement..." : "Télécharger CV"}
+                  <Download size={16} />
+                </AnimatedBorderButton>
+              </button>
             </div>
 
             {/* Social Media Links} */}
@@ -106,7 +154,7 @@ export const Hero = () => {
               {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse z-10"></div> */}
               <div className="relative glass-navbar rounded-3xl p-2 glow-border z-20">
                 <img
-                  src={logo}
+                  src={espa}
                   alt="Logo"
                   className="w-full aspect-auto object-cover rounded-2xl"
                 />
@@ -115,7 +163,7 @@ export const Hero = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-sm font-medium">
-                      Available for work
+                      Disponible
                     </span>
                   </div>
                 </div>
@@ -123,7 +171,7 @@ export const Hero = () => {
                 <div className="absolute -top-4 -left-4 glass-navbar rounded-xl px-4 py-3 animation-float animate-delay-500">
                   <div className="text-lg font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
-                    Years Exp.
+                    Année Exp.
                   </div>
                 </div>
               </div>
@@ -160,6 +208,18 @@ export const Hero = () => {
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
+
+      {/* Toast Notification */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
+
+      {/* Loader */}
+      {isLoading && <Loader />}
     </section>
   );
 };

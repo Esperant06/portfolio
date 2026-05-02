@@ -4,8 +4,8 @@ const experiences = [
     role: "Stagiaire en Développement Logiciel",
     company: "Trésorerie Générale d'Antsirabe",
     description:
-      "Développement d'une application web interne (Laravel + MySQL) qui remplace l'utilisation de 15 feuilles Excel et documents papier pour la gestion des opérations de trésorerie. Gain de temps estimé de 40% pour l'équipe.",
-    technologies: ["Laravel", "MySQL", "PHP", "Bootstrap"],
+      "Développement d'une application web interne qui remplace l'utilisation des feuilles Excel et documents papier pour la gestion des opérations de trésorerie. Gain de temps estimé de 40% pour l'équipe.",
+    technologies: ["Python", "PHP", "JavaScript", "MySQL", "Oracle", "Bootstrap", "Tailwindcss"],
     current: true,
   },
   {
@@ -13,7 +13,7 @@ const experiences = [
     role: "Digital Project Manager",
     company: "OpenData Madagascar",
     description:
-      "Création et maintenance du site WordPress pour le compte de Simplifia. Intégration de 8 nouvelles fonctionnalités, optimisation SEO et mises à jour mensuelles du site.",
+      "Création et maintenance du site WordPress pour le compte de Simplifia. Intégration des nouvelles fonctionnalités, optimisation SEO et mises à jour du site.",
     technologies: ["WordPress", "SEO", "HTML/CSS", "PHP"],
     current: false,
   },
@@ -22,8 +22,8 @@ const experiences = [
     role: "Formateur en Développement d'Application Web",
     company: "Association Tia-Tech",
     description:
-      "Animation de sessions de formation (théorie + pratique) pour plus de 50 apprenants sur HTML, CSS, JavaScript, Bootstrap et frameworks modernes. Développement de supports pédagogiques et suivi personnalisé.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "ReactJS"],
+      "Animation de sessions de formation (théorie + pratique) pour des apprenants sur HTML, CSS, JavaScript, Bootstrap et frameworks modernes. Développement de supports pédagogiques et suivi personnalisé.",
+    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP"],
     current: false,
   },
 ];
@@ -48,7 +48,7 @@ export const Experience = () => {
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Un parcours riche marqué par la formation, les projet divers et l'engagement en tant que développeur et formateur.
+            Un parcours riche marqué par la formation, les projets divers et l'engagement en tant que développeur et formateur.
           </p>
         </div>
 

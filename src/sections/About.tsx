@@ -16,7 +16,7 @@ const highlights = [
   {
     icon: Users,
     title: "Collaboration",
-    description: "Travailler à proximité avec les équipes pour concriser les idées.",
+    description: "Travailler en proximité avec les équipes pour concrétiser les idées.",
   },
   {
     icon: Lightbulb,
@@ -38,29 +38,29 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animate-delay-200 text-secondary-foreground">
-              Développeur passionné,
-              <span className="font-serif italic font-normal text-white">
+              Développeur passionné
+              {/* <span className="font-serif italic font-normal text-white">
                 {" "}
                 formateur engagé.
-              </span>
+              </span> */}
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                Diplômé d'un Master en Génie Logiciel, j'ai commencé ma carrière en formant plus de 50 apprenants aux technologies web modernes. Depuis, j'ai eu l'opportunité de travailler sur des projets variés : de la gestion de projets digitaux à la développement d'applications internes complexes.
+                Diplômé d'un Master en Génie Logiciel, j'ai commencé ma carrière dans le développement web. Depuis, j'ai eu l'opportunité de travailler sur des projets variés : de la gestion de projets digitaux au développement d'applications internes complexes.
               </p>
               <p>
-                Actuellement stagiaire à la Trésorerie Générale d'Antsirabe, je développe une application web (Laravel + MySQL) qui remplace 15 feuilles Excel et documents papier, offrant un gain de temps de 40% pour l'équipe. Je maîtrises PHP, JavaScript, Dart et des frameworks comme Laravel, ReactJS et Flutter.
+                Actuellement stagiaire à la Trésorerie Générale d'Antsirabe, je développe une application web (Laravel + MySQL) qui remplace 15 feuilles Excel et documents papier, offrant un gain de temps de 40% pour l'équipe. Je maîtrise PHP, JavaScript, Dart et des frameworks comme Laravel, ReactJS et Flutter.
               </p>
               <p>
-                Ma passion réside dans la création de solutions techniques robustes et dans le partage de mon savoir avec la communauté. En dehors du code, vous me trouverez en trail ou en train de jouer aux jeux vidéo.
+                Ma passion réside dans la création de solutions techniques robustes et innovantes avec la communauté. En dehors du code, vous me trouverez en trail ou en train de jouer aux jeux vidéo.
               </p>
             </div>
 
             <div className="glass-navbar rounded-2xl p-6 glow-text animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
                 "Mon objectif est de créer des solutions technologiques qui simplifient la vie des gens
-                et d'inspirer la prochaine génération de développeurs à atteindre leurs rves."
+                et de créer des solutions qui simplifient la vie des gens à atteindre leurs rêves."
               </p>
             </div>
           </div>

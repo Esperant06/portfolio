@@ -17,7 +17,7 @@ type Social = {
 const socials: Social[] = [
     { icon: 'Github', url: 'https://github.com/Esperant06' },
     { icon: 'Linkedin', url: 'https://www.linkedin.com/in/esperant-xxx' },
-    { icon: 'Facebook', url: 'https://facebook.com/esperant' },
+    { icon: 'Facebook', url: 'https://web.facebook.com/es.perant.590613' },
 ];
 
 const SocialIcons: React.FC = () => {
