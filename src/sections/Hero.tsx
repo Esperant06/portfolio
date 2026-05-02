@@ -7,6 +7,7 @@ import espa from "@/assets/espa.png";
 import { useState } from "react";
 import { Toast } from "../components/Toast";
 import { Loader } from "../components/Loader";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const skills = [
   "PHP",
@@ -39,6 +40,18 @@ export const Hero = () => {
   const [randomDots] = useState(() => generateRandomDots());
   const [isLoading, setIsLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactClick = () => {
+    // Si on est sur /all-projects, naviguer vers l'accueil avec le hash
+    if (location.pathname !== "/" && location.pathname !== "/portfolio") {
+      navigate("/#contact");
+    } else {
+      // Si on est déjà sur l'accueil, naviger vers le hash
+      navigate("#contact");
+    }
+  };
 
   const handleDownloadCV = async () => {
     try {
@@ -51,6 +64,8 @@ export const Hero = () => {
       const link = document.createElement("a");
       link.href = "/portfolio/cv.pdf";
       link.download = "Danos-CV.pdf";
+      link.rel = "noopener noreferrer";
+      
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -59,7 +74,7 @@ export const Hero = () => {
       setToast({ message: "CV téléchargé ✓", type: "success" });
     } catch (error) {
       console.error("Erreur lors du téléchargement:", error);
-      setToast({ message: "Erreur lors du téléchargement", type: "error" });
+      setToast({ message: "Erreur lors du téléchargement du CV", type: "error" });
     } finally {
       setIsLoading(false);
     }
@@ -125,7 +140,11 @@ export const Hero = () => {
 
             {/* Call to Action Buttons} */}
             <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-800">
-              <Button size="md" className="btn btn-primary px-5 py-5">
+              <Button 
+                onClick={handleContactClick}
+                size="md" 
+                className="btn btn-primary px-5 py-5 cursor-pointer"
+              >
                 Me Contacter <ArrowRight size={16} />
               </Button>
               <button
@@ -182,7 +201,7 @@ export const Hero = () => {
         {/* { Skills Section } */}
         <div className="mt-20 animate-fade-in animate-delay-1200">
           <p className="text-sm text-muted-foreground mb-6 text-center">
-            Technologies I work with
+            Technologies que j’utilise
           </p>
           <div className="relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-background to-transparent z-10" />

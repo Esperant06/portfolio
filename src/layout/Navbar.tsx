@@ -25,7 +25,7 @@ export const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
 
         return () => window.removeEventListener("scroll", handleScroll);
-    })
+    }, []) // Dépendances vides : n'exécuter qu'une fois au montage
 
     const handleNavClick = (hash: string) => {
         // Si on est sur /all-projects, naviguer vers l'accueil avec le hash
