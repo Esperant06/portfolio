@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Toast } from "../components/Toast";
 import { Loader } from "../components/Loader";
 import { useNavigate, useLocation } from "react-router-dom";
+import { APP_CONFIG } from "../config/constants";
 
 const skills = [
   "PHP",
@@ -62,7 +63,10 @@ export const Hero = () => {
 
       // Créer un lien temporaire et déclencher le téléchargement
       const link = document.createElement("a");
-      link.href = "/portfolio/cv.pdf";
+      const cvPath = APP_CONFIG.BASE_PATH === '/' 
+        ? '/cv.pdf' 
+        : `${APP_CONFIG.BASE_PATH}/cv.pdf`;
+      link.href = cvPath;
       link.download = "Danos-CV.pdf";
       link.rel = "noopener noreferrer";
       
