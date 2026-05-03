@@ -1,8 +1,15 @@
 /**
  * Configuration centralisée de l'application
  */
+
+// Déterminer le chemin de base en fonction de l'environnement
+const getBasePath = () => {
+  const basePath = import.meta.env.VITE_BASE_PATH;
+  return basePath || '/';
+};
+
 export const APP_CONFIG = {
-  BASE_PATH: "/portfolio",
+  BASE_PATH: getBasePath(),
   APP_NAME: "Danos Espérant - Développeur Full Stack",
   APP_DESCRIPTION: "Portfolio professionnel de Danos Espérant, développeur Full Stack passionné par les technologies modernes",
   AUTHOR: "Danos Espérant",
