@@ -26,6 +26,19 @@
   --color-surface: #1a2329;
 }
 
+@supports (selector(:is(.dark *))) {
+  .dark {
+    --color-background: #f5f5f5;
+    --color-foreground: #1a1a1a;
+    --color-card: #e8e8e8;
+    --color-secondary: #d9d9d9;
+    --color-muted: #cccccc;
+    --color-muted-foreground: #666666;
+    --color-border: #d0d0d0;
+    --color-surface: #ececec;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -68,6 +81,15 @@
     box-shadow:
       0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+
+  /* Classe pour les accents de texte qui s'adaptent au thème */
+  .theme-accent {
+    color: white;
+  }
+
+  .dark .theme-accent {
+    color: #1a1a1a;
   }
 }
 

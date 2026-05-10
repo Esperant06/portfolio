@@ -49,7 +49,7 @@ export const Testimonials = () => {
     );
   };
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden">
+    <section id="testimonials" className="relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 w-200 h-200 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -59,7 +59,7 @@ export const Testimonials = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100 text-secondary-foreground">
             Des mots gentils de{" "}
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif italic font-normal theme-accent">
               personnes formidables.
             </span>
           </h2>

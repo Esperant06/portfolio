@@ -23,7 +23,7 @@ export const AllProjects = () => {
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground">
               Tous Mes Projets
-              <span className="block font-serif italic font-normal text-white mt-2">
+              <span className="block font-serif italic font-normal theme-accent mt-2">
                 Une sélection complète de mes travaux
               </span>
             </h1>

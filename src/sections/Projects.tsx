@@ -8,7 +8,7 @@ const projects = allProjects.slice(0, 4);
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
+    <section id="projects" className="pb-20 relative overflow-hidden">
       {/* Bg glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -20,7 +20,7 @@ export const Projects = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100 text-secondary-foreground">
             Projets qui
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif italic font-normal theme-accent">
               {" "}
               ont de l'impact.
             </span>

@@ -132,7 +132,7 @@ export const Hero = () => {
                 <span className="text-primary glow-text">technologiques </span>
                 <br />
                 qui changent la<br />
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif italic font-normal theme-accent">
                   pratique.
                 </span>
               </h1>

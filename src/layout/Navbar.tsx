@@ -1,8 +1,10 @@
 import Button from "../components/Button";
 import { useEffect, useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
+import { Moon, Sun } from "lucide-react";
 import ButtonMenu from "../components/ButtonMenu";
 import { Logo } from "../components/Logo";
+import { useTheme } from "../hooks/useTheme";
 
 const NavLinks = [
     { href: "#about", label: "À Propos" },
@@ -16,6 +18,7 @@ export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+    const { isDark, toggleTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -63,9 +66,21 @@ export const Navbar = () => {
                     </div>
                 </div>
 
-                {/* {CTA Button} */}
-                <div className="hidden md:block">
+                {/* {CTA Button & Theme Toggle} */}
+                <div className="hidden md:flex items-center gap-3">
                     <Button onClick={handleContactClick} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                    
+                    <button
+                        onClick={toggleTheme}
+                        aria-label="Basculer le mode clair/sombre"
+                        className="p-2 rounded-full hover:bg-surface transition-colors duration-300 text-muted-foreground hover:text-foreground"
+                    >
+                        {isDark ? (
+                            <Sun size={20} className="text-yellow-400" />
+                        ) : (
+                            <Moon size={20} className="text-blue-400" />
+                        )}
+                    </button>
                 </div>
 
                 {/* {Mobile Nav Bouton} */}
@@ -91,7 +106,20 @@ export const Navbar = () => {
                                 {link.label}
                             </button>
                         ))}
-                        <Button onClick={() => { handleContactClick(); setIsMobileMenuOpen(false); }} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                        <div className="flex gap-3 mt-2">
+                            <button
+                                onClick={toggleTheme}
+                                aria-label="Basculer le mode clair/sombre"
+                                className="p-2 rounded-full hover:bg-surface transition-colors duration-300 text-muted-foreground hover:text-foreground"
+                            >
+                                {isDark ? (
+                                    <Sun size={20} className="text-yellow-400" />
+                                ) : (
+                                    <Moon size={20} className="text-blue-400" />
+                                )}
+                            </button>
+                            <Button onClick={() => { handleContactClick(); setIsMobileMenuOpen(false); }} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                        </div>
                     </div>
                 </div>
             )}
