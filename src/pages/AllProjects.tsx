@@ -5,9 +5,7 @@ import { allProjects } from "../data/projects";
 export const AllProjects = () => {
   return (
     <section className="min-h-screen py-32 relative overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+      <div className="absolute inset-x-0 top-28 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header with back button */}
@@ -21,15 +19,15 @@ export const AllProjects = () => {
           </Link>
 
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground">
-              Tous Mes Projets
+            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground">
+              Tous mes projets
               <span className="block font-serif italic font-normal theme-accent mt-2">
                 Une sélection complète de mes travaux
               </span>
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
               Découvrez l'ensemble de mes réalisations, des applications web aux solutions mobiles,
-              témoignant de mon expertise technique et ma passion pour la création.
+              avec un regard sur les enjeux métier, la maintenabilité et l'expérience utilisateur.
             </p>
           </div>
         </div>
@@ -39,7 +37,7 @@ export const AllProjects = () => {
           {allProjects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass-navbar rounded-2xl overflow-hidden animate-fade-in"
+              className="group glass-navbar rounded-lg overflow-hidden animate-fade-in hover:-translate-y-1 transition-all duration-300"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image */}
@@ -54,14 +52,14 @@ export const AllProjects = () => {
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="p-3 rounded-full glass-navbar hover:bg-primary hover:text-primary-foreground transition-all"
                     title="Voir le projet"
                   >
                     <ArrowUpRight className="w-5 h-5" />
                   </a>
                   <a
                     href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="p-3 rounded-full glass-navbar hover:bg-primary hover:text-primary-foreground transition-all"
                     title="Code source"
                   >
                     <Github className="w-5 h-5" />
@@ -72,7 +70,7 @@ export const AllProjects = () => {
               {/* Content */}
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors leading-tight">
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">
                     {project.title}
                   </h3>
                   <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0 mt-1" />
@@ -101,7 +99,7 @@ export const AllProjects = () => {
             <p className="text-lg">
               <span className="text-primary font-semibold text-2xl">{allProjects.length}</span> projets
               {" "}
-              réalisés avec passion et expertise
+              réalisés avec exigence et sens du détail
             </p>
           </div>
         </div>

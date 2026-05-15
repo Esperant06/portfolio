@@ -67,7 +67,7 @@ export const Hero = () => {
         ? '/cv.pdf' 
         : `${APP_CONFIG.BASE_PATH}/cv.pdf`;
       link.href = cvPath;
-      link.download = "Danos-CV.pdf";
+      link.download = "CV-Danos-Espérant.pdf";
       link.rel = "noopener noreferrer";
       
       document.body.appendChild(link);
@@ -88,13 +88,8 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image + Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={herobg}
-          alt="Hero background"
-          className="w-full h-full object-cover opacity-30"
-        />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/10 via-background/78 to-background" />
       </div>
 
       {/* Conteneur pour les points (position relative important !) */}
@@ -102,7 +97,7 @@ export const Hero = () => {
         {randomDots.map((dot, index) => (
           <div
             key={index}
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            className="absolute w-1.5 h-1.5 rounded-full opacity-35"
             style={{
               backgroundColor: "var(--color-primary)",
               left: `${dot.left}%`,
@@ -120,25 +115,23 @@ export const Hero = () => {
           {/* Left Column - Text content} */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-navbar text-sm text-primary">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-navbar text-sm font-semibold text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>{" "}
-                Développeur Logiciel
+                Développeur Full Stack Web & Mobile
               </span>
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-400">
-                Construire des solutions{" "}
-                <span className="text-primary glow-text">technologiques </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight animate-fade-in animate-delay-400">
+                Des applications{" "}
+                <span className="text-primary glow-text">fiables </span>
                 <br />
-                qui changent la<br />
-                <span className="font-serif italic font-normal theme-accent">
-                  pratique.
-                </span>
+                utiles et prêtes pour la production.
+                <br />
               </h1>
-              <p className="text-muted-foreground text-lg max-w-lg animate-fade-in animate-delay-600">
-                Je développe des applications web et mobiles robustes, tout en partageant mon expertise
-                avec les prochaines générations de développeurs.
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-xl animate-fade-in animate-delay-600">
+                Je transforme des besoins métier en interfaces claires et en solutions robustes avec
+                Laravel, ReactJS, Flutter et des bases de données solides.
               </p>
             </div>
 
@@ -147,16 +140,19 @@ export const Hero = () => {
               <Button 
                 onClick={handleContactClick}
                 size="md" 
-                className="btn btn-primary px-5 py-5 cursor-pointer"
+                className="h-12 min-w-44 bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/20"
               >
-                Me Contacter <ArrowRight size={16} />
+                Me contacter <ArrowRight size={16} />
               </Button>
               <button
                 onClick={handleDownloadCV}
                 disabled={isLoading}
                 className="disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
               >
-                <AnimatedBorderButton size="md" className={isLoading ? "opacity-50" : ""}>
+                <AnimatedBorderButton
+                  size="md"
+                  className={`h-12 min-w-44 ${isLoading ? "opacity-50" : ""}`}
+                >
                   {isLoading ? "Téléchargement..." : "Télécharger CV"}
                   <Download size={16} />
                 </AnimatedBorderButton>
@@ -165,7 +161,7 @@ export const Hero = () => {
 
             {/* Social Media Links} */}
             <div className="flex items-center gap-4 mt-6 animate-fade-in animate-delay-1000">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
+              <span className="text-sm font-medium text-muted-foreground">Me suivre</span>
               <SocialIcons />
             </div>
           </div>
@@ -174,15 +170,14 @@ export const Hero = () => {
           <div className="relative animate-fade-in animate-delay-400">
             {/* Image de profil ou illustration */}
             <div className="relative max-w-md mx-auto">
-              {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse z-10"></div> */}
-              <div className="relative glass-navbar rounded-3xl p-2 glow-border z-20">
+              <div className="relative glass-navbar rounded-lg p-2 glow-border z-20">
                 <img
                   src={espa}
                   alt="Logo"
-                  className="w-full aspect-auto object-cover rounded-2xl"
+                  className="w-full aspect-auto object-cover rounded-lg"
                 />
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 glass-navbar rounded-xl px-4 py-3 animation-float">
+                <div className="absolute -bottom-4 -right-4 glass-navbar rounded-lg px-4 py-3 animation-float">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-sm font-medium">
@@ -191,10 +186,10 @@ export const Hero = () => {
                   </div>
                 </div>
                 {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass-navbar rounded-xl px-4 py-3 animation-float animate-delay-500">
+                <div className="absolute -top-4 -left-4 glass-navbar rounded-lg px-4 py-3 animation-float animate-delay-500">
                   <div className="text-lg font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
-                    Année Exp.
+                    Année d'exp.
                   </div>
                 </div>
               </div>
@@ -205,7 +200,7 @@ export const Hero = () => {
         {/* { Skills Section } */}
         <div className="mt-20 animate-fade-in animate-delay-1200">
           <p className="text-sm text-muted-foreground mb-6 text-center">
-            Technologies que j’utilise
+            Stack technique principale
           </p>
           <div className="relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-background to-transparent z-10" />
@@ -213,7 +208,7 @@ export const Hero = () => {
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
                 <div key={idx} className="shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                  <span className="text-lg font-semibold text-muted-foreground/60 hover:text-primary transition-colors">
                     {skill}
                   </span>
                 </div>

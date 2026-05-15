@@ -7,7 +7,7 @@ import { Logo } from "../components/Logo";
 import { useTheme } from "../hooks/useTheme";
 
 const NavLinks = [
-    { href: "#about", label: "À Propos" },
+    { href: "#about", label: "À propos" },
     { href: "#projects", label: "Projets" },
     { href: "#experience", label: "Expérience" },
     // { href: "#testimonials", label: "Témoignages" },
@@ -45,7 +45,7 @@ export const Navbar = () => {
     };
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "glass-strong py-3 backdrop-blur-md shadow-sm" : "bg-transparent py-5 backdrop-blur-none shadow-none"}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "glass-strong py-2 backdrop-blur-md shadow-sm" : "bg-transparent py-4 backdrop-blur-none shadow-none"}`}>
             <nav className="container mx-auto px-6 flex items-center justify-between h-16">
                 <Link to="/" className="flex items-center">
                     <Logo className="h-10 cursor-pointer" />
@@ -58,7 +58,7 @@ export const Navbar = () => {
                             <button
                                 key={index}
                                 onClick={() => handleNavClick(link.href)}
-                                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300 cursor-pointer bg-transparent border-none"
+                                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors duration-300 cursor-pointer bg-transparent border-none"
                             >
                                 {link.label}
                             </button>
@@ -68,12 +68,12 @@ export const Navbar = () => {
 
                 {/* {CTA Button & Theme Toggle} */}
                 <div className="hidden md:flex items-center gap-3">
-                    <Button onClick={handleContactClick} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                    <Button onClick={handleContactClick} size="md" children="Me contacter" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/20" />
                     
                     <button
                         onClick={toggleTheme}
                         aria-label="Basculer le mode clair/sombre"
-                        className="p-2 rounded-full hover:bg-surface transition-colors duration-300 text-muted-foreground hover:text-foreground"
+                        className="p-2 rounded-full hover:bg-muted transition-colors duration-300 text-muted-foreground hover:text-foreground"
                     >
                         {isDark ? (
                             <Sun size={20} className="text-yellow-400" />
@@ -101,7 +101,7 @@ export const Navbar = () => {
                                     handleNavClick(link.href);
                                     setIsMobileMenuOpen(false);
                                 }}
-                                className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full transition-colors duration-300 px-4 py-2 text-left bg-transparent border-none cursor-pointer"
+                                className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors duration-300 px-4 py-2 text-left bg-transparent border-none cursor-pointer font-medium"
                             >
                                 {link.label}
                             </button>
@@ -110,7 +110,7 @@ export const Navbar = () => {
                             <button
                                 onClick={toggleTheme}
                                 aria-label="Basculer le mode clair/sombre"
-                                className="p-2 rounded-full hover:bg-surface transition-colors duration-300 text-muted-foreground hover:text-foreground"
+                                className="p-2 rounded-full hover:bg-muted transition-colors duration-300 text-muted-foreground hover:text-foreground"
                             >
                                 {isDark ? (
                                     <Sun size={20} className="text-yellow-400" />
@@ -118,7 +118,7 @@ export const Navbar = () => {
                                     <Moon size={20} className="text-blue-400" />
                                 )}
                             </button>
-                            <Button onClick={() => { handleContactClick(); setIsMobileMenuOpen(false); }} size="md" children="Me Contacter" className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25" />
+                            <Button onClick={() => { handleContactClick(); setIsMobileMenuOpen(false); }} size="md" children="Me contacter" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/20" />
                         </div>
                     </div>
                 </div>

@@ -16,9 +16,10 @@ const Button: React.FC<ButtonProps> = ({
   ...rest // ← on récupère type, disabled, onClick, etc.
 }) => {
   const baseClasses = `
-    relative overflow-hidden rounded-full font-medium
+    relative overflow-hidden rounded-full font-semibold tracking-[0.01em]
     focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-    shadow-lg transition-all duration-300 active:scale-[0.98]
+    focus-visible:ring-primary focus-visible:ring-offset-background
+    shadow-sm transition-all duration-300 active:scale-[0.98]
   `;
 
   const sizeClasses: Record<ButtonSize, string> = {

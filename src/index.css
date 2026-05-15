@@ -82,15 +82,6 @@
       0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
-
-  /* Classe pour les accents de texte qui s'adaptent au thème */
-  .theme-accent {
-    color: white;
-  }
-
-  .dark .theme-accent {
-    color: #1a1a1a;
-  }
 }
 
 @layer utilities {

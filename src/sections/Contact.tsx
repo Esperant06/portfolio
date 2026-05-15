@@ -95,32 +95,24 @@ export const Contact = () => {
     }
   };
   return (
-    <section id="contact" className="pb-20 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-      </div>
-
+    <section id="contact" className="pt-25 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Contactez-Moi
+          <span className="text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in">
+            Contactez-moi
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100 text-secondary-foreground">
-            Construisons ensemble{" "}
-            <span className="font-serif italic font-normal theme-accent">
-              quelque chose de fantastique.
-            </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6 animate-fade-in animate-delay-100 text-foreground">
+            Parlons d'une mission ou d'un projet.
           </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Vous avez un projet en tête? J'aimerais bien l'entendre. Envoyez-moi un message
-            et discutons comment nous pouvons travailler ensemble.
+          <p className="text-muted-foreground leading-relaxed animate-fade-in animation-delay-200">
+            Vous avez un besoin en développement web, mobile ou une opportunité dans votre équipe ?
+            Envoyez-moi un message et je vous répondrai rapidement.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="glass-navbar p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+          <div className="glass-navbar p-8 rounded-lg border border-primary/20 animate-fade-in animation-delay-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -139,7 +131,7 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="w-full px-4 py-3 bg-surface rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
 
@@ -160,7 +152,7 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="w-full px-4 py-3 bg-surface rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
 
@@ -181,13 +173,13 @@ export const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   placeholder="Ton message..."
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 bg-surface rounded-lg border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full btn btn-primary py-5"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-5 shadow-primary/20"
                 size="md"
                 disabled={isLoading}
               >
@@ -203,7 +195,7 @@ export const Contact = () => {
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                  className={`flex items-center gap-3 p-4 rounded-lg ${
                     submitStatus.type === "success"
                       ? "bg-green-500/10 border border-green-500/20 text-green-400"
                       : "bg-red-500/10 border border-red-500/20 text-red-400"
@@ -222,7 +214,7 @@ export const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-6 animate-fade-in animate-delay-400">
-            <div className="glass-navbar rounded-3xl p-8">
+            <div className="glass-navbar rounded-lg p-8">
               <h3 className="text-xl font-semibold mb-6">
                 Informations de contact
               </h3>
@@ -231,9 +223,9 @@ export const Contact = () => {
                   <a
                     key={i}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-muted transition-colors group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
@@ -248,15 +240,15 @@ export const Contact = () => {
             </div>
 
             {/* Availability Card */}
-            <div className="glass-navbar rounded-3xl p-8 border border-primary/30">
+            <div className="glass-navbar rounded-lg p-8 border border-primary/20">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">Actuellement Disponible</span>
+                <span className="font-medium">Actuellement disponible</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                Je suis ouvert à des nouveaux projets et opportunités de collaboration. 
-                Que ce soit pour du développement web, mobile.
-                N'hésitez pas à me contacter pour discuter de vos besoins!
+                Je suis ouvert à de nouveaux projets et opportunités de collaboration,
+                que ce soit pour du développement web, mobile ou des outils internes.
+                N'hésitez pas à me contacter pour discuter de vos besoins.
               </p>
             </div>
           </div>

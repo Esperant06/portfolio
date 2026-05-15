@@ -30,25 +30,20 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="pb-20 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-
+    <section id="experience" className="pt-25 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Parcours Professionnel
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in">
+            Parcours professionnel
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            L'expérience qui{" "}
-            <span className="font-serif italic font-normal theme-accent">
-              {" "}
-              en dit long.
-            </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
+            Une expérience terrain orientée résultats.
           </h2>
 
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Un parcours riche marqué par la formation, les projets divers et l'engagement en tant que développeur et formateur.
+          <p className="text-muted-foreground leading-relaxed animate-fade-in animation-delay-200">
+            Un parcours marqué par la formation, la maintenance de projets existants et
+            le développement d'applications internes à forte valeur opérationnelle.
           </p>
         </div>
 
@@ -56,7 +51,7 @@ export const Experience = () => {
         <div className="relative">
 
             {/* {manao an'le bar mitsangana} */}
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2" />
 
           {/* Experience Items */}
           <div className="space-y-12">
@@ -78,7 +73,7 @@ export const Experience = () => {
                   className={`pl-8 md:pl-0 ${idx % 2 === 0 ? "md:pr-16 md:text-right" : "md:col-start-2 md:pl-16"}`}
                 >
                   <div
-                    className={`glass-navbar p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
+                    className={`glass-navbar p-6 rounded-lg border border-primary/20 hover:border-primary/50 hover:-translate-y-1 transition-all duration-500`}
                   >
                     <span className="text-sm text-primary font-medium">
                       {exp.period}

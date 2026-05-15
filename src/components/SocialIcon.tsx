@@ -33,7 +33,7 @@ const SocialIcons: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Suivre sur ${social.icon}`}
-                        className="text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors p-2 rounded-full transition-all duration-300"
+                        className="text-muted-foreground hover:bg-primary/10 hover:text-primary p-2 rounded-full transition-all duration-300"
                     >
                         <Icon size={20} strokeWidth={2} className='w-5 h-5'/>
                     </a>
