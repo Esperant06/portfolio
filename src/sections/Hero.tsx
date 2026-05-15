@@ -1,4 +1,3 @@
-import herobg from "@/assets/herobg.jpg";
 import Button from "../components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
