@@ -12,20 +12,17 @@ export const AllProjects = () => {
         <div className="mb-16">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8 group animate-fade-in"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Retour à l'accueil
           </Link>
 
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground">
-              Tous mes projets
-              <span className="block font-serif italic font-normal theme-accent mt-2">
-                Une sélection complète de mes travaux
-              </span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight animate-fade-in text-foreground">
+              Tous mes projets <br />Une sélection complète de mes travaux
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+            <p className="text-muted-foreground text-lg leading-relaxed max-width animate-fade-in">
               Découvrez l'ensemble de mes réalisations, des applications web aux solutions mobiles,
               avec un regard sur les enjeux métier, la maintenabilité et l'expérience utilisateur.
             </p>
