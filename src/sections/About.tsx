@@ -46,7 +46,7 @@ export const About = () => {
                 Diplômé d'un Master en Génie Logiciel, j'ai construit un profil hybride entre développement web, applications mobiles et gestion de projets digitaux.
               </p>
               <p>
-                Actuellement stagiaire à la Trésorerie Générale d'Antsirabe, je développe une application web Laravel + MySQL qui remplace 15 feuilles Excel et documents papier, avec un gain de temps estimé à 40% pour l'équipe.
+                Actuellement stagiaire à la Trésorerie Générale d'Antsirabe, je développe une application web qui remplace des feuilles Excel et documents papier, avec un gain de temps estimé à 40% pour l'équipe.
               </p>
               <p>
                 Je maîtrise PHP, JavaScript, Dart et des frameworks comme Laravel, ReactJS et Flutter. Mon objectif est de livrer des solutions utiles, propres et faciles à reprendre par une équipe.

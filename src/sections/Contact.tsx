@@ -179,7 +179,7 @@ export const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-5 shadow-primary/20"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/20"
                 size="md"
                 disabled={isLoading}
               >

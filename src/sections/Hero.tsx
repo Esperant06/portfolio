@@ -121,7 +121,7 @@ export const Hero = () => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight animate-fade-in animate-delay-400">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight animate-fade-in animate-delay-400">
                 Des applications{" "}
                 <span className="text-primary glow-text">fiables </span>
                 <br />
@@ -129,16 +129,15 @@ export const Hero = () => {
                 <br />
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-xl animate-fade-in animate-delay-600">
-                Je transforme des besoins métier en interfaces claires et en solutions robustes avec
-                Laravel, ReactJS, Flutter et des bases de données solides.
+                Je transforme des besoins métier en interfaces claires et en solutions robustes et des bases de données solides.
               </p>
             </div>
 
             {/* Call to Action Buttons} */}
             <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-800">
-              <Button 
+              <Button
                 onClick={handleContactClick}
-                size="md" 
+                size="md"
                 className="h-12 min-w-44 bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/20"
               >
                 Me contacter <ArrowRight size={16} />
