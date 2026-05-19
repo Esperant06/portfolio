@@ -198,7 +198,7 @@ export const Hero = () => {
         {/* { Skills Section } */}
         <div className="mt-20 animate-fade-in animate-delay-1200">
           <p className="text-sm text-muted-foreground mb-6 text-center">
-            Stack technique principale
+            Technologies Principales
           </p>
           <div className="relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-background to-transparent z-10" />
@@ -206,7 +206,7 @@ export const Hero = () => {
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
                 <div key={idx} className="shrink-0 px-8 py-4">
-                  <span className="text-lg font-semibold text-muted-foreground/60 hover:text-primary transition-colors">
+                  <span className="text-lg font-semibold text-muted-foreground/90 hover:text-primary transition-colors">
                     {skill}
                   </span>
                 </div>
@@ -220,7 +220,7 @@ export const Hero = () => {
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
         >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <span className="text-xs uppercase tracking-wider">Faire Défiler</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
