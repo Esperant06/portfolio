@@ -17,7 +17,7 @@ export const Footer = () => {
 
   const handleNavClick = (hash: string) => {
     // Si on est sur /all-projects, naviguer vers l'accueil avec le hash
-    if (location.pathname !== "/" && location.pathname !== "/portfolio") {
+    if (location.pathname !== "/") {
       navigate(`/${hash}`);
     } else {
       // Si on est déjà sur l'accueil, naviger vers le hash

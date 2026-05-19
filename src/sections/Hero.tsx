@@ -45,7 +45,7 @@ export const Hero = () => {
 
   const handleContactClick = () => {
     // Si on est sur /all-projects, naviguer vers l'accueil avec le hash
-    if (location.pathname !== "/" && location.pathname !== "/portfolio") {
+    if (location.pathname !== "/") {
       navigate("/#contact");
     } else {
       // Si on est déjà sur l'accueil, naviger vers le hash
